@@ -5,7 +5,7 @@ from sklearn import model_selection
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report
 
 # Set the base directory
 basedir = os.getcwd()
@@ -49,6 +49,9 @@ Y_pred2 = default_classifier.predict(X_test_pca)
 # Compare predicted Y and actual Y
 accuracy2 = accuracy_score(Y_test, Y_pred2)
 print(f"Accuracy Default Model: {accuracy2*100}%")
+
+# Classification report
+print(classification_report(Y_test, Y_pred, digits=3))
 
 
 fin=1
